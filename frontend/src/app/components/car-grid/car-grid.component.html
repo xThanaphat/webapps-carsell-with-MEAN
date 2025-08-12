@@ -1,0 +1,89 @@
+<app-hero subtitle="Curated premium brands — BMW, Mercedes, Audi, Lexus, Porsche"></app-hero>
+
+<section class="container" style="padding:18px 0 40px 0;">
+  <div class="glass" style="padding:16px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;">
+    <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+      <input placeholder="Search model..." [(ngModel)]="q" (keyup.enter)="fetch()" style="min-width:220px;">
+      <select [(ngModel)]="brandSlug" (change)="fetch()">
+        <option [ngValue]="null">All brands</option>
+        <option *ngFor="let b of brands" [ngValue]="b.slug">{{b.name}}</option>
+      </select>
+      <input type="number" placeholder="Min ฿" [(ngModel)]="minPrice" (change)="fetch()" style="width:120px;">
+      <input type="number" placeholder="Max ฿" [(ngModel)]="maxPrice" (change)="fetch()" style="width:120px;">
+      <button class="btn" (click)="fetch()">Filter</button>
+      <button class="btn" (click)="clearFilters()">Clear</button>
+    </div>
+    <div>
+      <select [(ngModel)]="sort" (change)="fetch()">
+        <option value="new">Newest</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="year-desc">Year: New to Old</option>
+        <option value="year-asc">Year: Old to New</option>
+      </select>
+    </div>
+  </div>
+
+  <div style="margin-top:16px; display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:16px;">
+    <app-car-card *ngFor="let car of cars" [car]="car" (view)="selected = $event" (add)="addToCart($event)"></app-car-card>
+  </div>
+
+  <!-- Modal -->
+  <div *ngIf="selected" style="position:fixed; inset:0; background:rgba(0,0,0,.4); display:flex; align-items:center; justify-content:center; padding:20px;">
+    <div class="glass" style="max-width:900px; width:100%; overflow:hidden;">
+      <div style="padding:16px; display:flex; justify-content:space-between; align-items:center;">
+        <h2 style="margin:0">{{selected.title}}</h2>
+        <button class="btn" (click)="closeModal()">Close</button>
+      </div>
+
+      <div style="padding:0 16px 16px 16px;">
+        <div style="display:flex; gap:8px; margin:0 0 10px 0;">
+          <button class="btn" (click)="viewMode='photo'">Photo</button>
+          <button class="btn" [disabled]="!selected?.spin?.frames?.length" (click)="viewMode='spin'">360°</button>
+        </div>
+
+        <div *ngIf="viewMode==='photo'">
+          <img [src]="selected.imageUrl" [alt]="selected.title" style="width:100%; max-height:420px; object-fit:cover;">
+        </div>
+        <div *ngIf="viewMode==='spin'">
+          <app-spin-viewer [frames]="selected?.spin?.frames" [alt]="selected?.title"></app-spin-viewer>
+        </div>
+
+        <p style="color:var(--muted); margin-top:12px;">{{selected.description}}</p>
+        <div style="display:flex; gap:12px; color:var(--muted)">
+          <span>{{selected.brand?.name}}</span><span>•</span>
+          <span>{{selected.year}}</span><span>•</span>
+          <span>{{selected.mileage | number}} km</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px;">
+          <div class="price">฿ {{selected.price | number}}</div>
+          <button class="btn" (click)="addToCart(selected)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div *ngIf="cartOpen" style="position:fixed; top:0; right:0; width:360px; height:100%; background:#fff; border-left:1px solid #eee; box-shadow:-10px 0 30px rgba(0,0,0,.06);">
+    <div style="padding:16px; display:flex; justify-content:space-between; align-items:center;">
+      <h3 style="margin:0">Your Selection</h3>
+      <button class="btn" (click)="cartOpen=false">Close</button>
+    </div>
+    <div style="padding:0 16px; display:flex; flex-direction:column; gap:10px; max-height:calc(100% - 160px); overflow:auto;">
+      <div *ngFor="let item of cartItems()" class="glass" style="display:flex; gap:10px; padding:10px;">
+        <img [src]="item.imageUrl" style="width:72px; height:56px; object-fit:cover; border-radius:10px;">
+        <div style="flex:1;">
+          <div style="font-weight:600; font-size:14px;">{{item.title}}</div>
+          <div style="color:var(--muted); font-size:12px;">{{item.brand?.name}} • {{item.year}}</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="price" style="font-size:14px;">฿ {{item.price | number}}</div>
+          <button class="btn" (click)="removeFromCart(item._id)" style="margin-top:6px;">Remove</button>
+        </div>
+      </div>
+    </div>
+    <div style="padding:16px; border-top:1px solid #eee;">
+      <a routerLink="/contact" class="btn" style="width:100%; display:block; text-align:center;">Contact Sales</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+<section class="container" style="padding:40px 0;">
+  <div class="glass" style="padding:24px; max-width:720px; margin:0 auto;">
+    <h2 style="margin-top:0">Contact Sales</h2>
+    <p style="color:var(--muted)">Tell us what you're looking for — our advisor will reach out within one business day.</p>
+    <form (ngSubmit)="submit()" *ngIf="!sent" style="display:grid; gap:12px;">
+      <input placeholder="Full name" [(ngModel)]="payload.name" name="name" required>
+      <input placeholder="Email" type="email" [(ngModel)]="payload.email" name="email" required>
+      <input placeholder="Phone (optional)" [(ngModel)]="payload.phone" name="phone">
+      <textarea placeholder="Your message" rows="4" [(ngModel)]="payload.message" name="message" required></textarea>
+      <button class="btn" [disabled]="sending" type="submit">{{ sending ? 'Sending...' : 'Send' }}</button>
+      <div *ngIf="error" style="color:#b91c1c;">{{error}}</div>
+    </form>
+    <div *ngIf="sent">
+      <h3>Thanks! 🎉</h3>
+      <p>We received your message and will contact you shortly.</p>
+    </div>
+  </div>
+</section>

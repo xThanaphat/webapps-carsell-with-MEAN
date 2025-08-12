@@ -1,0 +1,42 @@
+:root{
+  --bg1:#ffffff;
+  --bg2:#f6f9ff;
+  --accent:#0f172a;
+  --primary:#111827;
+  --muted:#6b7280;
+  --brand:#1f2937;
+}
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, 'Apple Color Emoji','Segoe UI Emoji';
+  color: var(--primary);
+  background:
+    radial-gradient(1200px 500px at 80% -10%, #e9efff 0%, transparent 60%),
+    radial-gradient(800px 300px at -10% 10%, #f1f8ff 0%, transparent 60%),
+    linear-gradient(0deg, var(--bg2), var(--bg1));
+}
+a{ color: inherit; text-decoration: none; }
+.container{ width: min(1200px, 92%); margin: 0 auto; }
+.glass {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+.btn{ padding: 10px 16px; border-radius: 10px; border:1px solid #e5e7eb; cursor:pointer; }
+.btn:hover{ transform: translateY(-1px); }
+.nav-link{ opacity:.9; }
+.nav-link:hover{ opacity:1; }
+.card{ transition: transform .2s ease, box-shadow .2s ease; }
+.card:hover{ transform: translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.08); }
+input, select, textarea{
+  width:100%;
+  padding:12px 14px; border-radius:12px; border:1px solid #e5e7eb; outline:none;
+  background:#fff;
+}
+.badge{ font-size:12px; padding:4px 8px; border-radius:999px; background:#eef2ff; border:1px solid #e5e7eb; }
+.price{ font-weight:700; }
+footer{ margin-top:60px; padding:40px 0; color:#6b7280; }

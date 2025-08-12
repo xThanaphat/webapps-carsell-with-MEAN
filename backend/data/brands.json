@@ -1,0 +1,27 @@
+[
+  {
+    "name": "BMW",
+    "slug": "bmw",
+    "logoUrl": "https://logos-world.net/wp-content/uploads/2020/04/BMW-Logo-700x394.png"
+  },
+  {
+    "name": "Mercedes-Benz",
+    "slug": "mercedes-benz",
+    "logoUrl": "https://1000logos.net/wp-content/uploads/2018/04/Mercedes-Benz-Logo.png"
+  },
+  {
+    "name": "Audi",
+    "slug": "audi",
+    "logoUrl": "https://1000logos.net/wp-content/uploads/2017/04/Audi-logo.png"
+  },
+  {
+    "name": "Lexus",
+    "slug": "lexus",
+    "logoUrl": "https://1000logos.net/wp-content/uploads/2018/04/Lexus-logo.png"
+  },
+  {
+    "name": "Porsche",
+    "slug": "porsche",
+    "logoUrl": "https://1000logos.net/wp-content/uploads/2017/05/Porsche-Logo.png"
+  }
+]

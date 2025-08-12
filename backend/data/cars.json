@@ -1,0 +1,87 @@
+[
+  {
+    "title": "BMW 7 Series 740Li M Sport",
+    "brand": "bmw",
+    "year": 2022,
+    "mileage": 12000,
+    "price": 5900000,
+    "imageUrl": "https://images.unsplash.com/photo-1619767886558-efdc259cde1f?q=80&w=1600&auto=format&fit=crop",
+    "description": "Executive luxury sedan with M Sport package, advanced driver assistance, and soft-close doors.",
+    "spin": {
+      "frames": [
+        "/assets/spins/bmw-740li/frame_0001.png",
+        "/assets/spins/bmw-740li/frame_0002.png",
+        "/assets/spins/bmw-740li/frame_0003.png",
+        "/assets/spins/bmw-740li/frame_0004.png",
+        "/assets/spins/bmw-740li/frame_0005.png",
+        "/assets/spins/bmw-740li/frame_0006.png",
+        "/assets/spins/bmw-740li/frame_0007.png",
+        "/assets/spins/bmw-740li/frame_0008.png",
+        "/assets/spins/bmw-740li/frame_0009.png",
+        "/assets/spins/bmw-740li/frame_0010.png",
+        "/assets/spins/bmw-740li/frame_0011.png",
+        "/assets/spins/bmw-740li/frame_0012.png",
+        "/assets/spins/bmw-740li/frame_0013.png",
+        "/assets/spins/bmw-740li/frame_0014.png",
+        "/assets/spins/bmw-740li/frame_0015.png",
+        "/assets/spins/bmw-740li/frame_0016.png",
+        "/assets/spins/bmw-740li/frame_0017.png",
+        "/assets/spins/bmw-740li/frame_0018.png",
+        "/assets/spins/bmw-740li/frame_0019.png",
+        "/assets/spins/bmw-740li/frame_0020.png",
+        "/assets/spins/bmw-740li/frame_0021.png",
+        "/assets/spins/bmw-740li/frame_0022.png",
+        "/assets/spins/bmw-740li/frame_0023.png",
+        "/assets/spins/bmw-740li/frame_0024.png",
+        "/assets/spins/bmw-740li/frame_0025.png",
+        "/assets/spins/bmw-740li/frame_0026.png",
+        "/assets/spins/bmw-740li/frame_0027.png",
+        "/assets/spins/bmw-740li/frame_0028.png",
+        "/assets/spins/bmw-740li/frame_0029.png",
+        "/assets/spins/bmw-740li/frame_0030.png",
+        "/assets/spins/bmw-740li/frame_0031.png",
+        "/assets/spins/bmw-740li/frame_0032.png",
+        "/assets/spins/bmw-740li/frame_0033.png",
+        "/assets/spins/bmw-740li/frame_0034.png",
+        "/assets/spins/bmw-740li/frame_0035.png",
+        "/assets/spins/bmw-740li/frame_0036.png"
+      ]
+    }
+  },
+  {
+    "title": "Mercedes-Benz S 500 e AMG Premium",
+    "brand": "mercedes-benz",
+    "year": 2021,
+    "mileage": 18000,
+    "price": 6200000,
+    "imageUrl": "https://images.unsplash.com/photo-1549921296-3fd62a79d1cf?q=80&w=1600&auto=format&fit=crop",
+    "description": "Flagship comfort, plug-in hybrid efficiency, and Burmester 3D surround sound."
+  },
+  {
+    "title": "Audi A8 55 TFSI quattro",
+    "brand": "audi",
+    "year": 2020,
+    "mileage": 22000,
+    "price": 4500000,
+    "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1600&auto=format&fit=crop",
+    "description": "All-wheel drive limousine with adaptive air suspension and matrix LED headlights."
+  },
+  {
+    "title": "Lexus LS 500 Executive",
+    "brand": "lexus",
+    "year": 2022,
+    "mileage": 9000,
+    "price": 5300000,
+    "imageUrl": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1600&auto=format&fit=crop",
+    "description": "Whisper-quiet cabin, Mark Levinson audio, and legendary reliability."
+  },
+  {
+    "title": "Porsche Panamera 4S",
+    "brand": "porsche",
+    "year": 2019,
+    "mileage": 30000,
+    "price": 4900000,
+    "imageUrl": "https://images.unsplash.com/photo-1617781324540-1f9c9f82554b?q=80&w=1600&auto=format&fit=crop",
+    "description": "Sporty four-door with twin-turbo performance and precision handling."
+  }
+]

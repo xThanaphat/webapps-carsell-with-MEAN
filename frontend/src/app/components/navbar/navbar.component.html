@@ -1,0 +1,33 @@
+<nav class="container" style="padding:18px 0; display:flex; align-items:center; justify-content:space-between;">
+  <a routerLink="/" style="display:flex; align-items:center; gap:10px;">
+    <div style="width:38px; height:38px; border-radius:12px; background: linear-gradient(135deg,#f5f7ff,#e9efff); display:flex; align-items:center; justify-content:center; border:1px solid #e5e7eb;">🚗</div>
+    <strong style="font-size:18px;">LuxeDrive</strong>
+  </a>
+
+  <div class="nav desktop" style="display:flex; gap:24px; align-items:center;">
+    <div class="dropdown" (mouseenter)="brandOpen=true" (mouseleave)="brandOpen=false" style="position:relative;">
+      <a class="nav-link" href="javascript:void(0)">Brands ▾</a>
+      <div class="glass" *ngIf="brandOpen" style="position:absolute; top:38px; left:0; padding:14px; min-width:240px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <a *ngFor="let b of brands" [routerLink]="['/brand', b.slug]" class="badge">{{b.name}}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown" (mouseenter)="aboutOpen=true" (mouseleave)="aboutOpen=false" style="position:relative;">
+      <a class="nav-link" href="javascript:void(0)">About ▾</a>
+      <div class="glass" *ngIf="aboutOpen" style="position:absolute; top:38px; left:0; padding:14px; min-width:240px;">
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <a routerLink="/about" class="nav-link">Our Story</a>
+          <a routerLink="/about" class="nav-link">Why Premium</a>
+          <a routerLink="/about" class="nav-link">Showrooms</a>
+        </div>
+      </div>
+    </div>
+
+    <a routerLink="/contact" class="nav-link">Contact</a>
+  </div>
+
+  <button class="btn mobile-toggle" (click)="mobileOpen=!mobileOpen" style="display:none;">☰</button>
+</nav>
+<hr style="border:none; border-top:1px solid #eef2ff;">
